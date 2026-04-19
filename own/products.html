@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Collection</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+body { font-family: 'Newsreader', serif; }
+</style>
+</head>
+
+<body class="bg-[#fdf9f4] px-6 py-16">
+
+<h1 class="text-4xl text-center mb-10 text-[#1e2a38] italic">
+Our Collection
+</h1>
+
+<!-- CATEGORY BUTTONS -->
+<div class="flex justify-center gap-4 mb-10 flex-wrap">
+
+<button onclick="filterProducts('all', event)" class="px-4 py-2 bg-[#1e2a38] text-white rounded">All</button>
+
+<button onclick="filterProducts('bouquet', event)" class="px-4 py-2 bg-[#1e2a38] text-white rounded">Bouquets</button>
+
+<button onclick="filterProducts('woolen', event)" class="px-4 py-2 bg-[#1e2a38] text-white rounded">Woolen</button>
+
+<button onclick="filterProducts('chocolate', event)" class="px-4 py-2 bg-[#1e2a38] text-white rounded">Chocolates</button>
+
+</div>
+
+<!-- PRODUCTS GRID -->
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+<!-- BOUQUET -->
+<div class="product bg-white p-4 rounded-lg shadow text-center" data-category="bouquet">
+<a href="product.html?name=Bouquet">
+<img src="last/images/b1.jpeg" 
+class="rounded mb-4 transform rotate-2 hover:rotate-0 hover:scale-105 transition duration-500">
+</a>
+<h3 class="text-xl mb-2">Bouquet</h3>
+<button onclick="orderNow('Bouquet')" class="bg-[#1e2a38] text-white px-5 py-2 rounded">Order</button>
+</div>
+<div class="product bg-white p-4 rounded-lg shadow text-center" data-category="bouquet">
+<a href="product.html?name=photo_chocolate_boquet">
+<img src="last/images/b2.jpeg" 
+class="rounded mb-4 transform rotate-2 hover:rotate-0 hover:scale-105 transition duration-500">
+</a>
+<h3 class="text-xl mb-2">Photo & chocolate bouquet</h3>
+<button onclick="orderNow('Bouquet')" class="bg-[#1e2a38] text-white px-5 py-2 rounded">Order</button>
+</div>
+<div class="product bg-white p-4 rounded-lg shadow text-center" data-category="bouquet">
+<a href="product.html?name=flower_chocolate_photo_bouquet">
+<img src="last/images/b3.jpeg" 
+class="rounded mb-4 transform rotate-2 hover:rotate-0 hover:scale-105 transition duration-500">
+</a>
+<h3 class="text-xl mb-2">customized flower chocolate & photo Bouquet</h3>
+<button onclick="orderNow('Bouquet')" class="bg-[#1e2a38] text-white px-5 py-2 rounded">Order</button>
+</div>
+<div class="product bg-white p-4 rounded-lg shadow text-center" data-category="bouquet">
+<a href="product.html?name=Big_Bouquet">
+<img src="last/images/b4.jpeg" 
+class="rounded mb-4 transform rotate-2 hover:rotate-0 hover:scale-105 transition duration-500">
+</a>
+<h3 class="text-xl mb-2">Big Bouquet</h3>
+<button onclick="orderNow('Bouquet')" class="bg-[#1e2a38] text-white px-5 py-2 rounded">Order</button>
+</div>
+<div class="product bg-white p-4 rounded-lg shadow text-center" data-category="bouquet">
+<a href="product.html?name=Sunflower_Bouquet">
+<img src="last/images/b5.jpeg" 
+class="rounded mb-4 transform rotate-2 hover:rotate-0 hover:scale-105 transition duration-500">
+</a>
+<h3 class="text-xl mb-2">Sunflower Bouquet</h3>
+<button onclick="orderNow('Bouquet')" class="bg-[#1e2a38] text-white px-5 py-2 rounded">Order</button>
+</div>
+<div class="product bg-white p-4 rounded-lg shadow text-center" data-category="bouquet">
+<a href="product.html?name=Chocolate_flower_Bouquet">
+<img src="last/images/b6.jpeg" 
+class="rounded mb-4 transform rotate-2 hover:rotate-0 hover:scale-105 transition duration-500">
+</a>
+<h3 class="text-xl mb-2">Chocolate and flower Bouquet</h3>
+<button onclick="orderNow('Bouquet')" class="bg-[#1e2a38] text-white px-5 py-2 rounded">Order</button>
+</div>
+<div class="product bg-white p-4 rounded-lg shadow text-center" data-category="bouquet">
+<a href="product.html?name=Customized_Bouquet">
+<img src="last/images/b7.jpeg" 
+class="rounded mb-4 transform rotate-2 hover:rotate-0 hover:scale-105 transition duration-500">
+</a>
+<h3 class="text-xl mb-2">Quinder joy , chocolates and flower Bouquet</h3>
+<button onclick="orderNow('Bouquet')" class="bg-[#1e2a38] text-white px-5 py-2 rounded">Order</button>
+</div>
+<div class="product bg-white p-4 rounded-lg shadow text-center" data-category="bouquet">
+<a href="product.html?name=Small_Bouquet">
+<img src="last/images/b8.jpeg" 
+class="rounded mb-4 transform rotate-2 hover:rotate-0 hover:scale-105 transition duration-500">
+</a>
+<h3 class="text-xl mb-2">Single flower chocolate Bouquet</h3>
+<button onclick="orderNow('Bouquet')" class="bg-[#1e2a38] text-white px-5 py-2 rounded">Order</button>
+</div>
+<div class="product bg-white p-4 rounded-lg shadow text-center" data-category="bouquet">
+<a href="product.html?name=Kitkat_Bouquet">
+<img src="last/images/b9.jpeg" 
+class="rounded mb-4 transform rotate-2 hover:rotate-0 hover:scale-105 transition duration-500">
+</a>
+<h3 class="text-xl mb-2">Kitkat Bouquet</h3>
+<button onclick="orderNow('Bouquet')" class="bg-[#1e2a38] text-white px-5 py-2 rounded">Order</button>
+</div>
+<div class="product bg-white p-4 rounded-lg shadow text-center" data-category="bouquet">
+<a href="product.html?name=Middle_sized_Bouquet">
+<img src="last/images/b10.jpeg" 
+class="rounded mb-4 transform rotate-2 hover:rotate-0 hover:scale-105 transition duration-500">
+</a>
+<h3 class="text-xl mb-2">Middle sized customized Bouquet</h3>
+<button onclick="orderNow('Bouquet')" class="bg-[#1e2a38] text-white px-5 py-2 rounded">Order</button>
+</div>
+<div class="product bg-white p-4 rounded-lg shadow text-center" data-category="bouquet">
+<a href="product.html?name=Woolen_flower">
+<img src="last/images/b12.jpeg" 
+class="rounded mb-4 transform rotate-2 hover:rotate-0 hover:scale-105 transition duration-500">
+</a>
+<h3 class="text-xl mb-2">Woolen flower</h3>
+<button onclick="orderNow('Bouquet')" class="bg-[#1e2a38] text-white px-5 py-2 rounded">Order</button>
+</div>
+<div class="product bg-white p-4 rounded-lg shadow text-center" data-category="bouquet">
+<a href="product.html?name=Crochet_gift">
+<img src="last/images/b11.jpeg" 
+class="rounded mb-4 transform rotate-2 hover:rotate-0 hover:scale-105 transition duration-500">
+</a>
+<h3 class="text-xl mb-2">Crochet gift hamper..</h3>
+<button onclick="orderNow('Bouquet')" class="bg-[#1e2a38] text-white px-5 py-2 rounded">Order</button>
+</div>
+<div class="product bg-white p-4 rounded-lg shadow text-center" data-category="bouquet">
+<a href="product.html?name=woolen_duck">
+<img src="last/images/b14.jpeg" 
+class="rounded mb-4 transform rotate-2 hover:rotate-0 hover:scale-105 transition duration-500">
+</a>
+<h3 class="text-xl mb-2">Woolen duck</h3>
+<button onclick="orderNow('Bouquet')" class="bg-[#1e2a38] text-white px-5 py-2 rounded">Order</button>
+</div>
+<div class="product bg-white p-4 rounded-lg shadow text-center" data-category="All">
+<a href="product.html?name=Woolen_Keychain">
+<img src="last/images/b13.jpeg" 
+class="rounded mb-4 transform rotate-2 hover:rotate-0 hover:scale-105 transition duration-500">
+</a>
+<h3 class="text-xl mb-2">Woolen Keychain</h3>
+<button onclick="orderNow('Bouquet')" class="bg-[#1e2a38] text-white px-5 py-2 rounded">Order</button>
+</div>
+<div class="product bg-white p-4 rounded-lg shadow text-center" data-category="bouquet">
+<a href="product.html?name=Romantic_gift_Bouquet">
+<img src="last/images/b15.jpeg" 
+class="rounded mb-4 transform rotate-2 hover:rotate-0 hover:scale-105 transition duration-500">
+</a>
+<h3 class="text-xl mb-2">photo and chocolate customized bouquet</h3>
+<button onclick="orderNow('Bouquet')" class="bg-[#1e2a38] text-white px-5 py-2 rounded">Order</button>
+</div>
+<div class="product bg-white p-4 rounded-lg shadow text-center" data-category="bouquet">
+<a href="product.html?name=Flower_stalk">
+<img src="last/images/b16.jpeg" 
+class="rounded mb-4 transform rotate-2 hover:rotate-0 hover:scale-105 transition duration-500">
+</a>
+<h3 class="text-xl mb-2">Woolen flower stalk</h3>
+<button onclick="orderNow('Bouquet')" class="bg-[#1e2a38] text-white px-5 py-2 rounded">Order</button>
+</div>
+
+<!-- WOOLEN -->
+<div class="product bg-white p-4 rounded-lg shadow text-center" data-category="woolen">
+<a href="product.html?name=Evil_eye">
+<img src="last/images/b18.jpeg" 
+class="rounded mb-4 transform rotate-2 hover:rotate-0 hover:scale-105 transition duration-500">
+</a>
+<h3 class="text-xl mb-2">Evil eye</h3>
+<button onclick="orderNow('Woolen Keychain')" class="bg-[#1e2a38] text-white px-5 py-2 rounded">Order</button>
+</div>
+<div class="product bg-white p-4 rounded-lg shadow text-center" data-category="woolen">
+<a href="product.html?name=Beer_keychain">
+<img src="last/images/b13.jpeg" 
+class="rounded mb-4 transform rotate-2 hover:rotate-0 hover:scale-105 transition duration-500">
+</a>
+<h3 class="text-xl mb-2">Beer keyhains</h3>
+<button onclick="orderNow('Woolen Keychain')" class="bg-[#1e2a38] text-white px-5 py-2 rounded">Order</button>
+</div>
+<div class="product bg-white p-4 rounded-lg shadow text-center" data-category="woolen">
+<a href="product.html?name=Panda_keychain">
+<img src="last/images/b19.jpeg" 
+class="rounded mb-4 transform rotate-2 hover:rotate-0 hover:scale-105 transition duration-500">
+</a>
+<h3 class="text-xl mb-2">Panda keychains</h3>
+<button onclick="orderNow('Woolen Keychain')" class="bg-[#1e2a38] text-white px-5 py-2 rounded">Order</button>
+</div>
+<div class="product bg-white p-4 rounded-lg shadow text-center" data-category="woolen">
+<a href="product.html?name=hair_clip">
+<img src="last/images/b20.jpeg" 
+class="rounded mb-4 transform rotate-2 hover:rotate-0 hover:scale-105 transition duration-500">
+</a>
+<h3 class="text-xl mb-2">Hair clip</h3>
+<button onclick="orderNow('Woolen Keychain')" class="bg-[#1e2a38] text-white px-5 py-2 rounded">Order</button>
+</div>
+<div class="product bg-white p-4 rounded-lg shadow text-center" data-category="woolen">
+<a href="product.html?name=Specs_holder">
+<img src="last/images/b21.jpeg" 
+class="rounded mb-4 transform rotate-2 hover:rotate-0 hover:scale-105 transition duration-500">
+</a>
+<h3 class="text-xl mb-2">specs holder</h3>
+<button onclick="orderNow('Woolen Keychain')" class="bg-[#1e2a38] text-white px-5 py-2 rounded">Order</button>
+</div>
+<div class="product bg-white p-4 rounded-lg shadow text-center" data-category="woolen">
+<a href="product.html?name=Tulip_keychain">
+<img src="last/images/b23.jpeg" 
+class="rounded mb-4 transform rotate-2 hover:rotate-0 hover:scale-105 transition duration-500">
+</a>
+<h3 class="text-xl mb-2">Tulip keychain</h3>
+<button onclick="orderNow('Woolen Keychain')" class="bg-[#1e2a38] text-white px-5 py-2 rounded">Order</button>
+</div>
+<div class="product bg-white p-4 rounded-lg shadow text-center" data-category="woolen">
+<a href="product.html?name=crochet_clip">
+<img src="last/images/b24.jpeg" 
+class="rounded mb-4 transform rotate-2 hover:rotate-0 hover:scale-105 transition duration-500">
+</a>
+<h3 class="text-xl mb-2">Crochet clip</h3>
+<button onclick="orderNow('Woolen Keychain')" class="bg-[#1e2a38] text-white px-5 py-2 rounded">Order</button>
+</div>
+<div class="product bg-white p-4 rounded-lg shadow text-center" data-category="All">
+<a href="product.html?name=Pookie_tote_bag">
+<img src="last/images/b25.jpeg" 
+class="rounded mb-4 transform rotate-2 hover:rotate-0 hover:scale-105 transition duration-500">
+</a>
+<h3 class="text-xl mb-2">Pookie tote bag</h3>
+<button onclick="orderNow('Woolen Keychain')" class="bg-[#1e2a38] text-white px-5 py-2 rounded">Order</button>
+</div>
+<div class="product bg-white p-4 rounded-lg shadow text-center" data-category="woolen">
+<a href="product.html?name=Tote_bag">
+<img src="last/images/b26.jpeg" 
+class="rounded mb-4 transform rotate-2 hover:rotate-0 hover:scale-105 transition duration-500">
+</a>
+<h3 class="text-xl mb-2">Tote bag</h3>
+<button onclick="orderNow('Woolen Keychain')" class="bg-[#1e2a38] text-white px-5 py-2 rounded">Order</button>
+</div>
+<div class="product bg-white p-4 rounded-lg shadow text-center" data-category="bouquet">
+<a href="product.html?name=Green_chips_bouquet">
+<img src="last/images/b27.jpeg" 
+class="rounded mb-4 transform rotate-2 hover:rotate-0 hover:scale-105 transition duration-500">
+</a>
+<h3 class="text-xl mb-2">Green chips bouquet</h3>
+<button onclick="orderNow('Woolen Keychain')" class="bg-[#1e2a38] text-white px-5 py-2 rounded">Order</button>
+</div>
+<div class="product bg-white p-4 rounded-lg shadow text-center" data-category="woolen">
+<a href="product.html?name=Hair_tie">
+<img src="last/images/b28.jpeg" 
+class="rounded mb-4 transform rotate-2 hover:rotate-0 hover:scale-105 transition duration-500">
+</a>
+<h3 class="text-xl mb-2">Hair tie</h3>
+<button onclick="orderNow('Woolen Keychain')" class="bg-[#1e2a38] text-white px-5 py-2 rounded">Order</button>
+</div>
+<div class="product bg-white p-4 rounded-lg shadow text-center" data-category="All">
+<a href="product.html?name=customised_phone_cover">
+<img src="last/images/b29.jpeg" 
+class="rounded mb-4 transform rotate-2 hover:rotate-0 hover:scale-105 transition duration-500">
+</a>
+<h3 class="text-xl mb-2">customized phone cover</h3>
+<button onclick="orderNow('Woolen Keychain')" class="bg-[#1e2a38] text-white px-5 py-2 rounded">Order</button>
+</div>
+<div class="product bg-white p-4 rounded-lg shadow text-center" data-category="All">
+<a href="product.html?name=Crochet_mobile_cover">
+<img src="last/images/b30.jpeg" 
+class="rounded mb-4 transform rotate-2 hover:rotate-0 hover:scale-105 transition duration-500">
+</a>
+<h3 class="text-xl mb-2">Crochet mobile cover</h3>
+<button onclick="orderNow('Woolen Keychain')" class="bg-[#1e2a38] text-white px-5 py-2 rounded">Order</button>
+</div>
+<div class="product bg-white p-4 rounded-lg shadow text-center" data-category="woolen">
+<a href="product.html?name=Crochet_octopus">
+<img src="last/images/b31.jpeg" 
+class="rounded mb-4 transform rotate-2 hover:rotate-0 hover:scale-105 transition duration-500">
+</a>
+<h3 class="text-xl mb-2">Crochet octopus</h3>
+<button onclick="orderNow('Woolen Keychain')" class="bg-[#1e2a38] text-white px-5 py-2 rounded">Order</button>
+</div>
+<div class="product bg-white p-4 rounded-lg shadow text-center" data-category="All">
+<a href="product.html?name=Photo_cards">
+<img src="last/images/b32.jpeg" 
+class="rounded mb-4 transform rotate-2 hover:rotate-0 hover:scale-105 transition duration-500">
+</a>
+<h3 class="text-xl mb-2">Photo cards</h3>
+<button onclick="orderNow('Woolen Keychain')" class="bg-[#1e2a38] text-white px-5 py-2 rounded">Order</button>
+</div>
+<!-- CHOCOLATE -->
+<div class="product bg-white p-4 rounded-lg shadow text-center" data-category="chocolate">
+<a href="product.html?name=Chocolate Box">
+<img src="https://via.placeholder.com/300" 
+class="rounded mb-4 transform rotate-2 hover:rotate-0 hover:scale-105 transition duration-500">
+</a>
+<h3 class="text-xl mb-2">Chocolate Box</h3>
+<button onclick="orderNow('Chocolate Box')" class="bg-[#1e2a38] text-white px-5 py-2 rounded">Order</button>
+</div>
+
+</div>
+
+<script>
+function filterProducts(category, event) {
+    let products = document.querySelectorAll(".product");
+    let buttons = document.querySelectorAll("button");
+
+    buttons.forEach(btn => btn.classList.remove("opacity-50"));
+    event.target.classList.add("opacity-50");
+
+    products.forEach(product => {
+        if (category === "all" || product.dataset.category === category) {
+            product.style.display = "block";
+        } else {
+            product.style.display = "none";
+        }
+    });
+}
+
+function orderNow(product){
+    let url = `https://wa.me/919831204232?text=I want to order ${product}`;
+    window.open(url, "_blank");
+}
+</script>
+
+</body>
+</html>

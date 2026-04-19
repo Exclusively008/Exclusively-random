@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Product</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+body { font-family: 'Newsreader', serif; }
+</style>
+</head>
+
+<body class="bg-[#fdf9f4] flex items-center justify-center min-h-screen px-6">
+
+<div class="max-w-4xl grid md:grid-cols-2 gap-10 items-center">
+
+<!-- IMAGE -->
+<img id="productImage" alt="Product Image"
+class="rounded-lg shadow transform rotate-2 hover:rotate-0 transition duration-500">
+
+<div>
+
+<!-- NAME -->
+<h1 id="productName" class="text-3xl mb-4 text-[#1e2a38] italic"></h1>
+
+<!-- DESCRIPTION -->
+<p id="productDesc" class="text-gray-600 mb-6"></p>
+
+<!-- BUTTON -->
+<button id="orderBtn" onclick="orderNow()" 
+class="bg-[#1e2a38] text-white px-8 py-3 rounded-lg">
+Order Now
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+// 🔥 PRODUCT DATABASE (UNCHANGED)
+const products = {
+    "Bouquet": {
+        image: "last/images/b1.jpeg",
+        desc: "A delightful blend of sweetness and beauty, this handcrafted bouquet combines rich KitKat chocolates with fresh, vibrant flowers. Perfect for birthdays, surprises, or special moments, it’s a unique gift that speaks both love and indulgence in one stunning arrangement.At 179.",
+        price: 179
+    },
+    "photo_chocolate_boquet": {
+        image: "last/images/b2.jpeg",
+        desc: "A unique blend of memories and sweetness, this handmade bouquet is crafted with beautiful artificial flowers, delicious chocolates, and your favorite photos. Each piece is carefully arranged to create a heartfelt gift that feels both personal and elegant.Perfect for birthdays, anniversaries, or special surprises, this bouquet captures emotions in a way ordinary gifts cannot. The combination of soft floral aesthetics, tasty treats, and cherished memories makes it a truly unforgettable present.At 289.",
+        price: 289
+    },
+    "flower_chocolate_photo_bouquet": {
+        image: "last/images/b3.jpeg",
+        desc: "A beautifully handcrafted bouquet designed to add elegance and warmth to your moments.At 289.",
+        price: 289
+    },
+    "Big_Bouquet": {
+        image: "last/images/b4.jpeg",
+        desc: "A grand expression of love and memories, this oversized handmade bouquet features multiple polaroid memorial photos, premium chocolates, and fresh flowers arranged to perfection. It’s a unique and meaningful gift that blends sweetness, beauty, and unforgettable moments into one stunning creation.At 699.",
+        price: 699
+    },
+    "Sunflower_Bouquet": {
+        image: "last/images/b5.jpeg",
+        desc: "Brighten someone’s day with this charming handmade woolen sunflower bouquet. Carefully crafted with soft wool, each sunflower captures the warmth and positivity of real blooms while lasting forever. A perfect gift to spread joy, love, and sunshine on any occasion.At 569.",
+        price:569
+    },
+    "Chocolate_flower_Bouquet": {
+        image: "last/images/b6.jpeg",
+        desc: "A perfect blend of sweetness and beauty, this chocolate and flower bouquet is designed to impress. Featuring delicious chocolates paired with fresh, vibrant flowers, it’s a thoughtful gift that expresses love, joy, and celebration in the most delightful way.At 169.",
+        price: 169
+    },
+    "Customized_Bouquet": {
+        image: "last/images/b7.jpeg",
+        desc: "Indulge your loved ones with this luxurious chocolate and flower bouquet, beautifully handcrafted to combine rich flavors with natural elegance. A stunning gift choice that turns any moment into something truly special.At 239.",
+        price: 239
+    },
+    "Small_Bouquet": {
+        image: "last/images/b8.jpeg",
+        desc: "A small gesture with a big meaning—this single flower and chocolate bouquet is the perfect blend of sweetness and charm. Featuring a delicate bloom paired with a delicious chocolate, it’s an ideal gift to express love, appreciation, or a simple “thinking of you.At 149.",
+        price: 149
+    },
+    "Kitkat_Bouquet": {
+        image: "last/images/b9.jpeg",
+        desc: "A delightful treat for every chocolate lover, this KitKat bouquet is beautifully arranged to combine taste and creativity. Perfect for gifting, it adds a unique and sweet touch to any special occasion.At 269.",
+        price:269
+    },
+    "Middle_sized_Bouquet": {
+        image: "last/images/b10.jpeg",
+        desc: "Celebrate your special moments with this thoughtfully handcrafted bouquet, combining beautiful blooms, tasty chocolates, and cherished photos. Each element comes together to create a gift that’s both heartfelt and unforgettable.At 299.",
+        price:299
+    },
+    "Woolen_flower": {
+        image: "last/images/b12.jpeg",
+        desc: "Add a touch of charm with this handmade woolen flower stalk, carefully crafted with soft yarn and fine detailing. A beautiful and lasting alternative to real flowers, perfect for gifting or decorating any space.At 239.",
+        price:239
+    },
+    "Crochet_gift": {
+        image: "last/images/b11.jpeg",
+        desc: "Made with love and patience, this crochet gift hamper is more than just a present—it’s a bundle of handmade happiness. Each piece reflects comfort, creativity, and heartfelt effort, making it perfect for someone truly special.At 299.",
+        price:299
+    },
+    "woolen_duck": {
+        image: "last/images/b14.jpeg",
+        desc: "A little bundle of joy, this handmade woolen duck holding a flower is crafted with love and care. With its adorable design and soft texture, it makes a perfect gift to bring smiles and warmth to someone special.At 169.",
+        price:169
+    },
+    "Romantic_gift_Bouquet": {
+        image: "last/images/b15.jpeg",
+        desc: "A perfect blend of memories and sweetness, this photo and chocolate bouquet is designed to make every moment special. Featuring your cherished photos paired with delicious chocolates, it’s a heartfelt gift that captures emotions and creates lasting impressions.At 389.",
+        price:389
+    },
+    "Woolen_Keychain": {
+        image: "last/images/b13.jpeg",
+        desc: "Soft and cute handmade woolen keychain, crafted with love and attention to detail.At 79.",
+        price:79
+    },
+    "Flower_stalk": {
+        image:"last/images/b16.jpeg",
+        desc:"Add a soft and lasting charm to your space with this handmade woolen flower stalk. Carefully crafted with fine detailing, it offers the beauty of a flower that never fades, making it perfect for gifting or decoration.At 389.",
+        price:389
+    },
+    "Evil_eye": {
+        image:"last/images/b18.jpeg",
+        desc:"This handmade woolen evil eye is a beautiful blend of tradition and creativity. Crafted with soft yarn and fine detailing, it is believed to bring protection, positivity, and good vibes while adding a unique decorative touch.At 59.",
+        price:59
+    },
+    "Beer_keychain": {
+        image:"last/images/b13.jpeg",
+        desc:"Add a fun twist to your everyday accessories with this handmade beer woolen keychain. Crafted with soft yarn and detailed design, it’s a quirky and stylish piece perfect for keys, bags, or gifting.At 79.",
+        price:79
+    },
+    "Panda_keychain": {
+        image:"last/images/b19.jpeg",
+        desc:"Carry a little bundle of cuteness wherever you go with this handmade panda keychain. Designed with soft materials and charming details, it’s the perfect accessory to add a playful touch to your keys or bag.At 79.",
+        price:79
+    },
+    "hair_clip": {
+        image:"last/images/b20.jpeg",
+        desc:"Add a soft and charming touch to your hairstyle with this handmade woolen hair clip. Designed with delicate detailing and cozy texture, it’s perfect for enhancing your everyday look with a unique, handcrafted feel.At 89.",
+        price:89
+    },
+    "Specs_holder": {
+        image:"last/images/b21.jpeg",
+        desc:"Keep your glasses safe in style with this handmade woolen specs holder. Soft, lightweight, and carefully crafted, it protects your eyewear from scratches while adding a cozy, handcrafted touch.At 99.",
+        price:99
+    },
+    "Tulip_keychain": {
+        image:"last/images/b23.jpeg",
+        desc:"Add a touch of floral charm to your everyday essentials with this handmade tulip keychain. Designed with soft wool and delicate detailing, it brings a fresh and elegant vibe wherever you go.At 89.",
+        price:89
+    },
+    "crochet_clip": {
+        image:"last/images/b24.jpeg",
+        desc:"Add a handmade touch to your style with this crochet clip, beautifully crafted with soft yarn and delicate detailing. Perfect for everyday wear, it brings a cute and elegant charm to any look.At 49.",
+        price:49
+    },
+    "Pookie_tote_bag": {
+        image:"last/images/b25.jpeg",
+        desc:"Carry your essentials in the cutest way possible with this Pookie tote bag. Designed with a fun and lovable vibe, it’s perfect for adding a playful and stylish touch to your everyday look.At 149.",
+        price:149
+    },
+    "Tote_bag": {
+        image:"last/images/b26.jpeg",
+        desc:"Carry your essentials with ease using this versatile tote bag. Designed for everyday use, it combines style, comfort, and practicality, making it a perfect companion for work, shopping, or casual outings.At 179.",
+        price:179
+    },
+    "Green_chips_bouquet": {
+        image:"last/images/b27.jpeg",
+        desc:"Why gift flowers when you can gift snacks? This green chips bouquet is a unique and playful arrangement that combines style with everyone’s favorite treats—perfect for birthdays and casual celebrations.At 219.",
+        price:219
+    },
+    "Hair_tie": {
+        image:"last/images/b28.jpeg",
+        desc:"Keep your hair neat and stylish with this comfortable and durable hair tie. Designed for everyday use, it offers a secure hold without damaging your hair.At 399.",
+        price:399
+    },
+    "customised_phone_cover": {
+        image:"last/images/b29.jpeg",
+        desc:"Make your phone truly yours with this customised phone cover. Designed with your choice of photos, names, or designs, it adds a personal touch while keeping your device protected in style.At 189.",
+        price:189
+    },
+    "Crochet_octopus": {
+        image:"last/images/b31.jpeg",
+        desc:"Bring home a little bundle of cuteness with this handmade crochet octopus. Soft, colorful, and crafted with love, it’s perfect as a toy, décor piece, or a thoughtful gift.At 69.",
+        price:69
+    },
+    "Crochet_mobile_cover": {
+        image:"last/images/b30.jpeg",
+        desc:"This crochet mobile cover adds a warm, cozy touch to your everyday essentials. Lightweight yet protective, it keeps your phone safe while showcasing a beautiful handcrafted design.At 349.",
+        price:349
+    },
+    "Photo_cards": {
+        image:"last/images/b32.jpeg",
+        desc:"Capture your special moments in a beautiful way with these photo cards. Perfect for preserving memories, they add a personal and heartfelt touch to any gift or occasion.At 69.",
+        price:169
+    },
+};
+
+// GET NAME FROM URL
+let params = new URLSearchParams(window.location.search);
+let productName = params.get("name");
+
+// CLEAN DISPLAY NAME
+let displayName = productName ? productName.replaceAll("_", " ") : "";
+
+// SET NAME
+document.getElementById("productName").innerText = displayName;
+
+// SET IMAGE + DESCRIPTION
+if(products[productName]){
+    document.getElementById("productImage").src = products[productName].image;
+    document.getElementById("productDesc").innerText = products[productName].desc;
+} else {
+    document.getElementById("productDesc").innerText = "Product not found.";
+    document.getElementById("productImage").src = "https://via.placeholder.com/300";
+    document.getElementById("orderBtn").style.display = "none";
+}
+
+// WHATSAPP ORDER
+function orderNow(){
+
+let cleanName = displayName;
+let price = products[productName]?.price || "N/A";
+
+// ✨ Stylish WhatsApp message
+let message = `Hello 👋
+
+I want to order:
+
+🛍 Product: ${cleanName}
+💰 Price: ₹${price}
+
+👤 Name:
+📍 Address:
+
+Please confirm availability 😊`;
+
+// encode message properly
+let url = `https://wa.me/919831204232?text=${encodeURIComponent(message)}`;
+
+window.open(url, "_blank");
+}
+</script>
+
+</body>
+</html>
