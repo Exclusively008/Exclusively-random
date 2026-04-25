@@ -315,11 +315,31 @@ function filterProducts(category, event) {
     });
 }
 
-function orderNow(product){
-    let url = `https://wa.me/919831204232?text=I want to order ${product}`;
-    window.open(url, "_blank");
+function orderNow(){
+
+let cleanName = displayName;
+let price = products[productName]?.price || "N/A";
+
+// ✨ Stylish WhatsApp message
+let message = `Hello 👋
+
+I want to order:
+
+🛍 Product: ${cleanName}
+💰 Price: ₹${price}
+
+👤 Name:
+📍 Address:
+
+Please confirm availability 😊`;
+
+// encode message properly
+let url = `https://wa.me/919831204232?text=${encodeURIComponent(message)}`;
+
+window.open(url, "_blank");
 }
 </script>
+
 
 </body>
 </html>
